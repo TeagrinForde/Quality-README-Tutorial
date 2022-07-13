@@ -1,5 +1,4 @@
 // TODO: Include packages needed for this application
-
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
@@ -59,8 +58,6 @@ const questions = [
 var inquirerResponses = inquirer.prompt(questions);
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    // inquirerResponses
-        // .then((data) => {
             fs.writeFile(fileName, data, (err) => {
                 if (err) {
                     console.log(err)
@@ -68,7 +65,6 @@ function writeToFile(fileName, data) {
                     console.log('Success!');
                 }
             })
-        // })
 };
 
 

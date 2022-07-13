@@ -14,7 +14,6 @@ function renderLicenseBadge(license) {
   }
 };
 
-
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
@@ -74,7 +73,7 @@ function generateMarkdown(data) {
   - [Contribution Guidelines](#guidelines)
   - [Test Instructions](#test)
   - [License](#license)
-  - [Contact Me](#userName)(#email)
+  - [Questions](#userName)
 
   ## Installation
 
@@ -95,10 +94,10 @@ function generateMarkdown(data) {
   ${renderLicenseSection(data.license)}
   ${renderLicenseLink(data.license)}
   
-  ## Contribution Guidelines
-  GitHub User Name:  ${data.userName}
+  ## Questions
+  If you would like to see more of my work, checkout my GitHub repositories under the user name ${data.userName}.
   <br>
-  Email Address:  ${data.email}
+  If you have any additional questions, please contact me directly at:  ${data.email}
 `;
 }
 
