@@ -55,11 +55,12 @@ const questions = [
     }
 ];
 
+var inquirerResponses = inquirer.prompt(questions);
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    inquirer.prompt(questions)
+    inquirerResponses
     .then((data) => {
-        fs.writeFile(fileName, JSON.stringify(data), (error) => {
+        fs.writeFile(fileName, JSON.stringify(data), (error) => {  //look up writeFileSync (path.join(process.cwd(), fileName), data);
             if(error) {
                 console.log(error)
             } else {
@@ -72,8 +73,10 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then(());//start here
-    writeToFile('README.md', data);
+    inquirer.prompt(questions).then((inquirerResponses) => {
+        console.log('Generating README...');
+        writeToFile('README.md', generateMarkdown({...inquirerResponses}));
+    });
 };
 
 // Function call to initialize app
